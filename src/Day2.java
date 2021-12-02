@@ -13,7 +13,7 @@ public class Day2 {
 			while ((line = br.readLine()) != null) {
 				inputs += line + "\n";
 			}
-
+			br.close();
 			String[] lines = inputs.split("\n");
 
 			int hor = prestej(lines, 0);
