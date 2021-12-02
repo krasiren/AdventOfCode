@@ -7,7 +7,7 @@ public class Day2 {
 		String inputs = "";
 
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("resources\\Day2_i.txt"));
+			BufferedReader br = new BufferedReader(new FileReader("resources\\Day2_input.txt"));
 			String line = null;
 
 			while ((line = br.readLine()) != null) {
@@ -48,7 +48,7 @@ public class Day2 {
 					x += temp;
 				else if (first == 'u')
 					x -= temp;
-				
+
 				// Part Two
 			} else if (smer == 2) {
 				switch (first) {
