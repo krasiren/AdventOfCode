@@ -31,14 +31,7 @@ public class Day4 {
 				sheets.add(temp);
 			}
 			br.close();
-
-//			for (int i = 0; i < 5; i++) {
-//				for (int j = 0; j < 5; j++) {
-//					System.out.print(sheets.get(5)[i][j] + " ");
-//				}
-//				System.out.println();
-//			}
-
+			
 			bingoPlay(sheets, numbers);
 
 		} catch (Exception e) {
@@ -68,7 +61,7 @@ public class Day4 {
 //				System.out.println(getSumOfUnmarked(marked, x, sheets) * numbers[i]);
 //				break;
 
-				// ...and comment this
+				// ...and comment this (partTwo)
 				if (countCompleted(completed) == completed.length)
 					System.out.println(getSumOfUnmarked(marked, x, sheets) * numbers[i]);
 				
