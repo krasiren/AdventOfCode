@@ -33,6 +33,7 @@ public class Day5 {
 		for (int i = 0; i < lines.length; i++) {
 			if (lines[i].horOrVer())
 				fill(map, lines[i], true);
+			// for partOne comment 'else' block
 			else
 				fill(map, lines[i], false);
 		}
