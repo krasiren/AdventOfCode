@@ -39,7 +39,7 @@ public class Day5 {
 		}
 
 		int count = countIntersections(map);
-//		System.out.println(count);
+		System.out.println(count);
 
 	}
 
