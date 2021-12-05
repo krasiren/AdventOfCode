@@ -39,7 +39,7 @@ public class Day5 {
 		}
 
 		int count = countIntersections(map);
-		System.out.println(count);
+//		System.out.println(count);
 
 	}
 
@@ -94,6 +94,7 @@ public class Day5 {
 					max = lines[i].getxS();
 				if (lines[i].getxE() > max)
 					max = lines[i].getxE();
+
 			} else {
 				if (lines[i].getyS() > max)
 					max = lines[i].getyS();
@@ -108,10 +109,7 @@ public class Day5 {
 
 class Line {
 
-	private int xS;
-	private int yS;
-	private int xE;
-	private int yE;
+	private int xS, yS, xE, yE;
 
 	public Line(String start, String start2, String end, String end2) {
 		xS = Integer.parseInt(start);
