@@ -8,11 +8,11 @@ if year not in listdir():
 
 for day in range(1, 26):
     if not f'day {day}' in listdir(year):
-        mkdir(path.join(year, f'day {day}'))
-    
+        day_dir = f'day {day:02d}'
+        mkdir(path.join(year, day_dir))
     for part in range(1, 3):
-        with open(path.join(year, f'day {day}', f'part{part}.py'), 'w') as f:
-            f.write(initial_lines.replace('<year>', year).replace('<day>', f'day {day}'))
+        with open(path.join(year, day_dir, f'part{part}.py'), 'w') as f:
+            f.write(initial_lines.replace('<year>', year).replace('<day>', day_dir))
 
-    with open(path.join(year, f'day {day}', 'input.txt'), 'w') as f:
+    with open(path.join(year, day_dir, 'input.txt'), 'w') as f:
             f.write("")
