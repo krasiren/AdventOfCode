@@ -9,31 +9,33 @@ for line in lines[:line_split_ix]:
     ranges.append((int(start), int(end)))
 
 
-def join_ranges(all_ranges):
-    merged = []
+def find_pair(all_ranges):
     for i, r in enumerate(all_ranges):
         f_start, f_end = r
-        was_merged = False
         for j, rs in enumerate(all_ranges):
             s_start, s_end = rs
             if i == j:
                 continue
             if (f_start <= s_start <= f_end) or (f_start <= s_end <= f_end):
-                merged.append((min(f_start, s_start), max(f_end, s_end)))
-                was_merged = True
+                return i, j, (min(f_start, s_start), max(f_end, s_end))
 
-        if not was_merged:
-            merged.append(r)
+    return -1, -1, None
 
-    return list(set(merged))
+
+def merge_two_ranges(all_ranges, i, j, element):
+    new_ranges = []
+    for k, r in enumerate(all_ranges):
+        if k != i and k != j:
+            new_ranges.append(r)
+    new_ranges.append(element)
+    return new_ranges
 
 
 while True:
-    new_ranges = join_ranges(ranges)
-    if len(new_ranges) == len(ranges):
+    first_pos, second_pos, new_range = find_pair(ranges)
+    if new_range is None:
         break
-    ranges = new_ranges
-
+    ranges = merge_two_ranges(ranges, first_pos, second_pos, new_range)
 
 num_ids = 0
 for start, end in ranges:
