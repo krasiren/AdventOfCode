@@ -1,2 +1,6 @@
-with open('2025/day 12/input.txt', 'r') as f:
-	lines = f.readlines()
+from pathlib import Path
+
+
+if __name__ == '__main__':
+	with Path(__file__).with_name('input.txt').open() as f:
+		lines = f.read().splitlines()
